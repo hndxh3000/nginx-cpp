@@ -1,0 +1,11 @@
+这个文件用于初始化测试数据库
+
+su postgres		//切换用户
+createuser -D -P -R -e ng_test   //创建数据库用户并设置密码（给第三方软件和库访问的账户）
+createdb -E utf8 -O ng_test db_ng_test	//创建数据库，指定拥有者
+
+//运行脚本，初始化表
+psql db_ng_test -f ./tbs.sql
+
+psql
+

@@ -1,0 +1,21 @@
+ngx_addon_name=nw_msg_svr_face
+ngx_module_type=HTTP
+ngx_module_name=nw_msg_svr_face
+
+ngx_module_srcs="$ngx_addon_dir/nw_msg_svr_face.cpp \
+				 $ngx_addon_dir/parser_face/parser_face.cpp \
+				 $ngx_addon_dir/DLogMana/DLogMana.cpp"
+
+ngx_module_src="$ngx_module_srcs"
+
+ngx_module_incs="$ngx_addon_dir/parser_face \
+				 $ngx_addon_dir/DLogMana \
+				 /usr/local/include/glog" 
+
+ngx_module_libs="-lglog"
+
+#ngx_module_incs="$ngx_addon_dir/ /usr/local/include/glog/"
+#ngx_module_deps="logging.h"
+#ngx_module_link="-lglog"
+#
+. auto/module
